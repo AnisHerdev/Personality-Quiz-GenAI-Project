@@ -8,6 +8,7 @@ load_dotenv()
 api_key = os.getenv("API_KEY")
 client = genai.Client(api_key=api_key)
 
+# Ensure the app is callable for Vercel
 app = Flask(__name__)
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
@@ -272,4 +273,5 @@ def submit():
     
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Use production-ready settings for Vercel
+    app.run(debug=False)

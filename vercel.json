@@ -1,0 +1,29 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/app.py"
+        },
+        {
+            "src": "/quiz",
+            "dest": "/app.py"
+        },
+        {
+            "src": "/submit",
+            "dest": "/app.py"
+        },
+        {
+            "src": "/.*",
+            "status": 404,
+            "dest": "/404.html"
+        }
+    ],
+    "framework": null
+}
